@@ -1,0 +1,15 @@
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\bin\Debug\net6.0\OOPGrundInlämning.exe
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\bin\Debug\net6.0\OOPGrundInlämning.deps.json
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\bin\Debug\net6.0\OOPGrundInlämning.runtimeconfig.json
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\bin\Debug\net6.0\OOPGrundInlämning.dll
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\bin\Debug\net6.0\OOPGrundInlämning.pdb
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\OOPGrundInlämning.csproj.AssemblyReference.cache
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\OOPGrundInlämning.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\OOPGrundInlämning.AssemblyInfoInputs.cache
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\OOPGrundInlämning.AssemblyInfo.cs
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\OOPGrundInlämning.csproj.CoreCompileInputs.cache
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\OOPGrundInlämning.dll
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\refint\OOPGrundInlämning.dll
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\OOPGrundInlämning.pdb
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\OOPGrundInlämning.genruntimeconfig.cache
+C:\Users\tobii\source\repos\Egna projekt\IndividuellInlämning\OOPGrundInlämning\OOPGrundInlämning\obj\Debug\net6.0\ref\OOPGrundInlämning.dll
