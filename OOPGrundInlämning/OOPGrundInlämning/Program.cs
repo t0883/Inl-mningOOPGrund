@@ -1,6 +1,3 @@
-﻿using System.Data.SqlTypes;
-using System.Diagnostics.SymbolStore;
-
 namespace OOPGrundInlämning
 {
     internal class Program
@@ -11,7 +8,7 @@ namespace OOPGrundInlämning
             //Skapar variablerna för programmet längst uppe så dom finns med hela tiden i programmet
             Console.CursorVisible = false;
             bool appRunning = true;
-            
+
             int wallet = 0;
             int oneThousand = 0;
             int fiveHundred = 0;
@@ -23,24 +20,24 @@ namespace OOPGrundInlämning
             int one = 0;
 
             //Lite kläder som läggs till i klädes listan så man inte behöver manuellt gå in och lägga till varje gång man startar programmet
-            Clothes.garnments.Add(new Clothes("Jacket", 1000, "Winterjacket.", "Red."));
-            Clothes.garnments.Add(new Clothes("Pants", 500, "Outdoor pants for hiking.", "Green."));
-            Clothes.garnments.Add(new Clothes("Sweater", 400, "Christmas sweater.", "White."));
-            Clothes.garnments.Add(new Clothes("Hoodie", 400, "Wutan Clan hoodie.", "Black and yellow."));
-            Clothes.garnments.Add(new Clothes("T-Shirt", 100, "Guns and roses t-shirt.", "Blac.k"));
+            Clothes.garnments.Add(new Clothes("Jacket", 1000, "Winterjacket", "Red"));
+            Clothes.garnments.Add(new Clothes("Pants", 500, "Outdoor pants for hiking", "Green"));
+            Clothes.garnments.Add(new Clothes("Sweater", 400, "Christmas sweater", "White"));
+            Clothes.garnments.Add(new Clothes("Hoodie", 400, "Wutan Clan hoodie", "Black and yellow"));
+            Clothes.garnments.Add(new Clothes("T-Shirt", 100, "Guns and roses t-shirt", "Black"));
 
             //Lite mat som läggs till i mat listan så man inte behöver manuellt gå in och lägga till varje gång man startar programmet
-            Food.foods.Add(new Food("Sandwich", 35, "Grilled sandwich with tomatoes.", "Taste like a regualar sandwich."));
-            Food.foods.Add(new Food("Sallad", 85, "Sallad with lettuce, cucumbers, tomatoe and olives.", "Taste like kaninmat."));
-            Food.foods.Add(new Food("Hot dog", 45, "Hot dog with ketchup and grilled onions.", "Taste like god himself grilled the hot dog."));
-            Food.foods.Add(new Food("Hamburger", 120, "Hamburger with cheese and a pickel.", "Hamburger that beats the McD cheeseburger in a taste test."));
-            Food.foods.Add(new Food("Soup", 75, "Tomatoe soup made of tomatoes.", "Taste like the tomatoe soup you got from school."));
+            Food.foods.Add(new Food("Sandwich", 35, "Grilled sandwich with tomatoes", "Taste like a regualar sandwich"));
+            Food.foods.Add(new Food("Sallad", 85, "Sallad with lettuce, cucumbers, tomatoe and olives", "Taste like kaninmat"));
+            Food.foods.Add(new Food("Hot dog", 45, "Hot dog with ketchup and grilled onions", "Taste like god himself grilled the hot dog"));
+            Food.foods.Add(new Food("Hamburger", 120, "Hamburger with cheese and a pickel", "Hamburger that beats the McD cheeseburger in a taste test"));
+            Food.foods.Add(new Food("Soup", 75, "Tomatoe soup made of tomatoes", "Taste like the tomatoe soup you got from school"));
 
             //Lite dricka som läggs till i dricka listan så man inte behöver manuellt gå in och lägga till varje gång man startar programmet
             Drink.drinks.Add(new Drink("Coca-Cola Zero", 15, "Looks like cola", "Taste like cola"));
             Drink.drinks.Add(new Drink("Fanta Exotic", 19, "Looks like a Bloody Mary", "Taste like something exotic"));
             Drink.drinks.Add(new Drink("Pepsi Max", 15, "Looks like cola", "Taste like a better version of Coca-Cola"));
-            Drink.drinks.Add(new Drink("Redbull", 25,"Looks like something that gives you wings", "Taste like something that could give you wings"));
+            Drink.drinks.Add(new Drink("Redbull", 25, "Looks like something that gives you wings", "Taste like something that could give you wings"));
             Drink.drinks.Add(new Drink("Water", 10, "Transparent liquid", "Taste like water..."));
 
 
@@ -69,14 +66,14 @@ namespace OOPGrundInlämning
                 {
                     userInput = Console.ReadKey(true);
 
-                    if(
-                        userInput.Key == ConsoleKey.D1 || 
-                        userInput.Key == ConsoleKey.NumPad1 || 
-                        userInput.Key == ConsoleKey.D2 || 
-                        userInput.Key == ConsoleKey.NumPad2 || 
-                        userInput.Key == ConsoleKey.D3 || 
-                        userInput.Key == ConsoleKey.NumPad3 || 
-                        userInput.Key == ConsoleKey.D4 || 
+                    if (
+                        userInput.Key == ConsoleKey.D1 ||
+                        userInput.Key == ConsoleKey.NumPad1 ||
+                        userInput.Key == ConsoleKey.D2 ||
+                        userInput.Key == ConsoleKey.NumPad2 ||
+                        userInput.Key == ConsoleKey.D3 ||
+                        userInput.Key == ConsoleKey.NumPad3 ||
+                        userInput.Key == ConsoleKey.D4 ||
                         userInput.Key == ConsoleKey.NumPad4 ||
                         userInput.Key == ConsoleKey.D5 ||
                         userInput.Key == ConsoleKey.NumPad5)
@@ -89,7 +86,7 @@ namespace OOPGrundInlämning
                 Console.Clear();
                 Console.CursorVisible = true;
 
-                switch(userInput.Key)
+                switch (userInput.Key)
                 {
                     //Lägga till kläder i maskinen.
                     case ConsoleKey.D1:
@@ -270,6 +267,7 @@ namespace OOPGrundInlämning
                                     }
                                     Console.Write("Do you wish to buy something? (Y/N) ");
                                     string purchaseClothes = Console.ReadLine();
+                                    purchaseClothes.ToUpper();
                                     if (purchaseClothes == "Y")
                                     {
                                         Console.Write("Enter the name of the item you wish to buy: ");
@@ -277,24 +275,25 @@ namespace OOPGrundInlämning
 
                                         foreach (Clothes garnment in Clothes.garnments)
                                         {
-                                            if (garnment.name == buyItem)
+                                            if (garnment.name == buyItem && wallet >= garnment.price)
                                             {
-                                                if (wallet >= garnment.price)
-                                                {
-                                                    Console.Clear();
-                                                    wallet -= garnment.price;
-                                                    garnment.Buy();
-                                                    garnment.Use();
-                                                    Clothes.garnments.Remove(garnment);
-                                                    break;
-                                                }
-                                                else
-                                                {
-                                                    Console.Clear();
-                                                    Console.WriteLine("Rejectet. Not enough cash in the machine.");
-                                                }
+                                                Console.Clear();
+                                                wallet -= garnment.price;
+                                                garnment.Buy();
+                                                garnment.Use();
+                                                Clothes.garnments.Remove(garnment);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+                                                Console.WriteLine("Rejectet. Not enough cash in the machine.");
                                             }
                                         }
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
                                     }
                                     break;
 
@@ -309,31 +308,33 @@ namespace OOPGrundInlämning
                                     }
                                     Console.Write("Do you wish to buy something? (Y/N) ");
                                     string purchaseFood = Console.ReadLine();
+                                    purchaseFood.ToUpper();
                                     if (purchaseFood == "Y")
                                     {
                                         Console.Write("Enter the name of the item you wish to buy: ");
                                         string buyItem = Console.ReadLine();
-                                        
+
                                         foreach (Food food in Food.foods)
                                         {
-                                            if (food.name == buyItem)
+                                            if (food.name == buyItem && wallet >= food.price)
                                             {
-                                                if (wallet >= food.price)
-                                                {
-                                                    Console.Clear();
-                                                    wallet -= food.price;
-                                                    food.Buy();
-                                                    food.Use();
-                                                    Food.foods.Remove(food);
-                                                    break;
-                                                }
-                                                else
-                                                {
-                                                    Console.Clear();
-                                                    Console.WriteLine("Rejectet. Not enough cash in the machine.");
-                                                }
+                                                Console.Clear();
+                                                wallet -= food.price;
+                                                food.Buy();
+                                                food.Use();
+                                                Food.foods.Remove(food);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+                                                Console.WriteLine("Rejectet. Not enough cash in the machine.");
                                             }
                                         }
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
                                     }
                                     break;
 
@@ -348,6 +349,7 @@ namespace OOPGrundInlämning
                                     }
                                     Console.Write("Do you wish to buy something? (Y/N) ");
                                     string purchaseDrink = Console.ReadLine();
+                                    purchaseDrink.ToUpper();
                                     if (purchaseDrink == "Y")
                                     {
                                         Console.Write("Enter the name of the item you wish to buy: ");
@@ -355,24 +357,25 @@ namespace OOPGrundInlämning
 
                                         foreach (Drink drink in Drink.drinks)
                                         {
-                                            if (drink.name == buyItem)
+                                            if (drink.name == buyItem && wallet >= drink.price)
                                             {
-                                                if (wallet >= drink.price)
-                                                {
-                                                    Console.Clear();
-                                                    wallet -= drink.price;
-                                                    drink.Buy();
-                                                    drink.Use();
-                                                    Drink.drinks.Remove(drink);
-                                                    break;
-                                                }
-                                                else
-                                                {
-                                                    Console.Clear();
-                                                    Console.WriteLine("Rejectet. Not enough cash in the machine.");
-                                                }
+                                                Console.Clear();
+                                                wallet -= drink.price;
+                                                drink.Buy();
+                                                drink.Use();
+                                                Drink.drinks.Remove(drink);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+                                                Console.WriteLine("Rejectet. Not enough cash in the machine.");
                                             }
                                         }
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
                                     }
                                     break;
 
@@ -384,19 +387,19 @@ namespace OOPGrundInlämning
                                     Console.Write("Please insert cash to the machine: ");
                                     try
                                     {
-                                         wallet += Convert.ToInt32(Console.ReadLine());
+                                        wallet += Convert.ToInt32(Console.ReadLine());
                                         Console.Clear();
                                     }
                                     catch (Exception)
                                     {
                                         Console.WriteLine("The machine only accept cash in numbers. Please try again");
                                         break;
-                                        
+
                                     }
-                                    
+
                                     break;
 
-                                    //While loop som går igenom wallet och räknar hur mycket av varje valör som ska lämnas tillbaka till kunden.
+                                //While loop som går igenom wallet och räknar hur mycket av varje valör som ska lämnas tillbaka till kunden.
                                 case ConsoleKey.D5:
                                 case ConsoleKey.NumPad5:
 
@@ -484,26 +487,31 @@ namespace OOPGrundInlämning
                                     oneThousand = 0;
                                     break;
 
-                                    //Ett sätt att stänga av maskinen och komma tillbaka till huvudmenyn.
+                                //Ett sätt att stänga av maskinen och komma tillbaka till huvudmenyn.
                                 case ConsoleKey.D6:
                                 case ConsoleKey.NumPad6:
-
-                                    vendingmachineOpen = false;
-
+                                    if (wallet != 0)
+                                    {
+                                        Console.WriteLine("You need to return your money before you leave the store!");
+                                    }
+                                    else
+                                    {
+                                        vendingmachineOpen = false;
+                                    }
                                     break;
                             }
 
 
                         } while (vendingmachineOpen);
                         break;
-                    
+
                     //Ett sätt att stänga av programmet.
                     case ConsoleKey.D5:
                     case ConsoleKey.NumPad5:
 
                         appRunning = false;
 
-                    break;
+                        break;
                 }
             } while (appRunning);
         }
